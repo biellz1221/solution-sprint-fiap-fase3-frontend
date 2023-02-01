@@ -1,0 +1,105 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter test --machine --start-paused -d DB68328C-D4DD-4A63-9B92-3D5F60FB701F test/widget_test.dart
+
+## exception
+
+ShaderCompilerException: ShaderCompilerException: Shader compilation of "/Users/gabrielbaptista/Documents/flutter/packages/flutter/lib/src/material/shaders/ink_sparkle.frag" to "build/unit_test_assets/shaders/ink_sparkle.frag" failed with exit code -9.
+impellerc stdout:
+
+impellerc stderr:
+
+
+
+
+```
+#0      ShaderCompiler.compileShader (package:flutter_tools/src/build_system/targets/shader_compiler.dart:202:9)
+<asynchronous suspension>
+#1      writeBundle.<anonymous closure> (package:flutter_tools/src/bundle_builder.dart:185:25)
+<asynchronous suspension>
+#2      Future.wait.<anonymous closure> (dart:async/future.dart:522:21)
+<asynchronous suspension>
+#3      writeBundle (package:flutter_tools/src/bundle_builder.dart:163:3)
+<asynchronous suspension>
+#4      TestCommand._buildTestAsset (package:flutter_tools/src/commands/test.dart:502:7)
+<asynchronous suspension>
+#5      TestCommand.runCommand (package:flutter_tools/src/commands/test.dart:329:7)
+<asynchronous suspension>
+#6      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1257:27)
+<asynchronous suspension>
+#7      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#8      CommandRunner.runCommand (package:args/command_runner.dart:209:13)
+<asynchronous suspension>
+#9      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:283:9)
+<asynchronous suspension>
+#10     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#11     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:229:5)
+<asynchronous suspension>
+#12     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:64:9)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#14     main (package:flutter_tools/executable.dart:91:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.7.0, on macOS 13.0.1 22A400 darwin-arm64, locale pt-BR)
+    • Flutter version 3.7.0 on channel stable at /Users/gabrielbaptista/Documents/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision b06b8b2710 (9 days ago), 2023-01-23 16:55:55 -0800
+    • Engine revision b24591ed32
+    • Dart version 2.19.0
+    • DevTools version 2.20.1
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+    • Android SDK at /Users/gabrielbaptista/Library/Android/sdk
+    • Platform android-33-ext4, build-tools 33.0.1
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 11.0.15+0-b2043.56-8887301)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 14.2)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 14C18
+    • CocoaPods version 1.11.3
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2022.1)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.15+0-b2043.56-8887301)
+
+[✓] IntelliJ IDEA Community Edition (version 2022.3.1)
+    • IntelliJ at /Applications/IntelliJ IDEA CE.app
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+
+[✓] VS Code (version 1.74.3)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.58.0
+
+[✓] Connected device (3 available)
+    • iPhone 14 Pro Max (mobile) • DB68328C-D4DD-4A63-9B92-3D5F60FB701F • ios            • com.apple.CoreSimulator.SimRuntime.iOS-16-2 (simulator)
+    • macOS (desktop)            • macos                                • darwin-arm64   • macOS 13.0.1 22A400 darwin-arm64
+    • Chrome (web)               • chrome                               • web-javascript • Google Chrome 109.0.5414.119
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+• No issues found!
+```
