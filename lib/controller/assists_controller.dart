@@ -50,5 +50,6 @@ class AssistsController extends GetxController with StateMixin<List<Assist>> {
     } else {
       selectedAssists.removeAt(indexFound);
     }
+    change(allAssists, status: RxStatus.success());
   }
 }

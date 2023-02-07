@@ -19,7 +19,6 @@ void initService() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       getPages: [
-        GetPage(name: "/", page: () => const OrderPage(), binding: OrderBind()),
+        GetPage(name: "/", page: () => OrderPage(), binding: OrderBind()),
         GetPage(name: "/assists", page: () => const HomePage(), binding: HomeBind())
       ],
     );

@@ -71,17 +71,22 @@ class OrderPage extends GetView<OrderController> {
             Obx(() => _renderAssists(controller.selectedAssists)),
             Row(
               children: [
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: controller.finishStartOrder,
-                    child: Obx(() {
-                      if (controller.screenState.value == OrderState.creating) {
-                        return const Text("Iniciar");
-                      } else {
-                        return const Text("Finalizar");
-                      }
-                    }),
-                  ),
+                ValueListenableBuilder<TextEditingValue>(
+                  valueListenable: controller.operatorIdController,
+                  builder: (context, value, child) {
+                    return Expanded(
+                      child: ElevatedButton(
+                        onPressed: value.text.isNotEmpty ? controller.finishStartOrder : null,
+                        child: Obx(() {
+                          if (controller.screenState.value == OrderState.creating) {
+                            return const Text("Iniciar");
+                          } else {
+                            return const Text("Finalizar");
+                          }
+                        }),
+                      ),
+                    );
+                  },
                 ),
               ],
             )

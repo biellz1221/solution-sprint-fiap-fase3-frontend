@@ -53,6 +53,13 @@ class OrderController extends GetxController with StateMixin {
     });
   }
 
+  bool shouldDisableButton() {
+    if (operatorIdController.text.isNotEmpty) {
+      return false;
+    }
+    return true;
+  }
+
   finishStartOrder() {
     if (operatorIdController.text.isEmpty) {
       Get.snackbar("Erro", "Código do operador precisa ser preencido");
