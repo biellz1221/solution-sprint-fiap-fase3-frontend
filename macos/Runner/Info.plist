@@ -28,5 +28,10 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Permission to use location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Permission to use location always</string>
+	<key>UISupportedInterfaceOrientations</key>
 </dict>
 </plist>
