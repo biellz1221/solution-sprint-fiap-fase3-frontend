@@ -96,6 +96,14 @@ class OrderController extends GetxController with StateMixin {
     change(null, status: RxStatus.success());
   }
 
+  void removeAssistFromList(Assist assist) {
+    int indexFound = selectedAssists.indexWhere((element) => element.id == assist.id);
+    if (indexFound != -1) {
+      selectedAssists.removeAt(indexFound);
+    }
+    change(selectedAssists, status: RxStatus.success());
+  }
+
   selectAssists() {
     Get.toNamed("/assists", arguments: selectedAssists);
   }

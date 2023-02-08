@@ -8,7 +8,19 @@ class OrderPage extends GetView<OrderController> {
   const OrderPage({Key? key}) : super(key: key);
 
   Widget _renderAssists(List<Assist> assists) {
-    return ListView.builder(shrinkWrap: true, itemCount: assists.length, itemBuilder: (context, index) => ListTile(title: Text(assists[index].name)));
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: assists.length,
+      itemBuilder: (context, index) => ListTile(
+        title: Text(assists[index].name),
+        trailing: IconButton(
+          icon: const Icon(Icons.delete),
+          onPressed: () {
+            controller.removeAssistFromList(assists[index]);
+          },
+        ),
+      ),
+    );
   }
 
   @override
@@ -16,7 +28,12 @@ class OrderPage extends GetView<OrderController> {
     return Scaffold(
       appBar: AppBar(title: const Text("Formulário")),
       body: Container(
-          constraints: const BoxConstraints.expand(), padding: const EdgeInsets.all(10.0), child: controller.obx((state) => buildForm(context))),
+        constraints: const BoxConstraints.expand(),
+        padding: const EdgeInsets.all(10.0),
+        child: controller.obx(
+          (state) => buildForm(context),
+        ),
+      ),
     );
   }
 
